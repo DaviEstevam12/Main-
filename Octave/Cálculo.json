@@ -1,0 +1,35 @@
+% Arquivo: equacao_segundo_grau.m
+function resultado = equacao_segundo_grau(a,b,c)
+    if a == 0
+    error("O coeficiente 'a' não pode ser zero. A equação não é do 2º grau.")
+    end
+    delta = b^2- 4*a*c;
+    xv = -b / (2*a);
+    yv = -delta / (4*a);
+
+    resultado.delta = delta;
+    resultado.vertice = [xv, yv];
+
+    if delta < 0
+        resultado.raizes = 'não há raízes reais';
+    elseif delta == 0
+        x_unico = -b / (2*a);
+        resultado.raizes = x_unico;
+    else
+        raizes_delta = sqrt(delta);
+        x1 = (-b + raiz_delta) / (2*a);
+        x2 = (-b - raiz_delta) / (2*a);
+        resultado.raizes = [x1,x2]
+        end
+    end
+
+    ###############################################################################
+
+function resultado = gargalhada(n)
+    if (n <= 0)
+    resultado = "";
+    else
+    resultado= repelem('ha',n);
+    
+    endif
+end
